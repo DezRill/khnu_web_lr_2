@@ -159,10 +159,14 @@ a img, form, menu, iframe {
 /* Заголовок і пункти меню */
 header {
     display: flex;
-    position: relative;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1001;
     padding: 20px 0;
     align-items: center;
     justify-content: space-between;
+    transition: .3s all;
 }
 
 .logo-block {
@@ -204,6 +208,26 @@ header {
 
 .desktop-menu li:hover a {
     color: #ffffff;
+}
+
+.desktop-menu li.dropdown-menu {
+    position: relative;
+}
+
+.desktop-menu li.dropdown-menu .dropdown{
+    display: none;
+    position: absolute;
+    padding-top: 10px;
+    width: 100%;
+    text-align: right;
+}
+
+.desktop-menu li.dropdown-menu .dropdown li {
+    text-align: right;
+}
+
+.desktop-menu li.dropdown-menu:hover .dropdown {
+    display: block;
 }
 
 .header-burger, .mobile-menu {
